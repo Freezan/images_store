@@ -14,7 +14,7 @@
 　                  //将excel导入access
                     //distinct :删除excel重复的行.
                     //[excel名].[sheet名] 已有的excel的表要加$
-                    //where not in : 插入不重复的记录。
+                    //where not in : 插入不重复的记录。ss
                     string sql = "insert into 用户表 select distinct * from [Excel 8.0;database=" + filename + "].[用户表$] where 记录编号   not IN (select 记录编号 from 用户表)";
                     OleDbCommand com = new OleDbCommand(sql, conExcel);
                     conExcel.Open();
